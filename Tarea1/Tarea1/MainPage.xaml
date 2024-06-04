@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tarea1.MainPage">
+
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Text="Operaciones Matematicas " FontSize="Large" HorizontalOptions="Center" Margin="0,50,0,20"/>
+
+        <Entry Grid.Row="1" x:Name="FirstNumberEntry" Placeholder="Ingrese el primer número" Keyboard="Numeric" Margin="0,0,0,10"/>
+        <Entry Grid.Row="2" x:Name="SecondNumberEntry" Placeholder="Ingrese el segundo número" Keyboard="Numeric" Margin="0,0,0,10"/>
+
+        <Grid Grid.Row="3" RowSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="0" Text="Sumar" Clicked="OnOperationButtonClicked" CommandParameter="Sumar" />
+            <Button Grid.Row="0" Grid.Column="1" Text="Restar" Clicked="OnOperationButtonClicked" CommandParameter="Restar" />
+            <Button Grid.Row="1" Grid.Column="0" Text="Multiplicar" Clicked="OnOperationButtonClicked" CommandParameter="Multiplicar" />
+            <Button Grid.Row="1" Grid.Column="1" Text="Dividir" Clicked="OnOperationButtonClicked" CommandParameter="Dividir" />
+        </Grid>
+
+        <Label Grid.Row="4" x:Name="ResultLabel" FontSize="Medium" HorizontalOptions="Center" Margin="0,20,0,0"/>
+
+        <ListView Grid.Row="5" x:Name="OperationsListView" Margin="0,20,0,0">
+
+        </ListView>
+
+        <Button Grid.Row="6" Text="Ir a Registro" Clicked="OnGoToRegistroButtonClicked" Margin="0,20,0,0"/>
+    </Grid>
+
+</ContentPage>

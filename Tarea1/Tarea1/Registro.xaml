@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tarea1.Registro">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Registro de Operaciones" FontSize="Large" HorizontalOptions="Center" Margin="0,50,0,20"/>
+
+            <ListView x:Name="OperationsListView">
+                <ListView.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Fecha Registro" FontAttributes="Bold" HorizontalOptions="StartAndExpand" />
+                        <Label Text="Operación" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                        <Label Text="Num°" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                        <Label Text="Num°" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                        <Label Text="Resultado" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Fecha}" HorizontalOptions="StartAndExpand" />
+                                <Label Text="{Binding TipoOperacion}" HorizontalOptions="CenterAndExpand" />
+                                <Label Text="{Binding Numero1}" HorizontalOptions="CenterAndExpand" />
+                                <Label Text="{Binding Numero2}" HorizontalOptions="CenterAndExpand" />
+                                <Label Text="{Binding Resultado}" HorizontalOptions="CenterAndExpand" />
+                            </StackLayout>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Eliminar" Clicked="OnDeleteClicked" CommandParameter="{Binding .}" IsDestructive="True" />
+                            </ViewCell.ContextActions>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
